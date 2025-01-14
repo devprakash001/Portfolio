@@ -306,3 +306,43 @@ footer {
     }
 }
 
+.websites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.website-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.website-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+}
+
+.website-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.website-link {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.website-link:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    transform: scale(1.05);
+}
