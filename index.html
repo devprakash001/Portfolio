@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="shortcut icon" type="x-icon" href="images/certificates/Untitled design (2).png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Dev Prakash Singh - Futuristic Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -11,240 +11,489 @@
 </head>
 <body>
     <div id="background"></div>
+    
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader">
+            <div class="loader-text">Loading...</div>
+        </div>
+    </div>
+    
     <header>
         <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#websites">Websites</a></li>
-                <li><a href="#certificates">Certificates</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <span>Dev</span>
+                </div>
+                <div class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#websites" class="nav-link">Websites</a></li>
+                    <li><a href="#certificates" class="nav-link">Certificates</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
     <main>
-        <section id="home">
-            <h1>Dev Prakash Singh</h1>
-            <p>Full Stack Developer | Innovator | Tech Enthusiast</p>
-            <a href="Resume.pdf" download class="cta-button">Download Resume</a>
-        </section>
-
-        <section id="about">
-            <h2>About Me</h2>
-            <div class="about-content">
-                <img src="images/certificates/IMG_20250114_174347.jpg" alt="Dev Prakash Singh" class="profile-image">
-                <p>A highly motivated and enthusiastic fresher with a strong foundation in both front-end and back-end technologies, seeking a position as a Full Stack Developer. Eager to apply my skills in developing scalable web applications while continuously learning and contributing to a dynamic tech environment.</p>
-            </div>
-        </section>
-
-        <section id="skills">
-            <h2>Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Front-end</h3>
-                    <ul>
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                        <li>JavaScript</li>
-                        <li>React JS</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Back-end</h3>
-                    <ul>
-                        <li>Java (JSP, Servlet)</li>
-                        <li>Node JS</li>
-                        <li>Spring Boot</li>
-                        <li>Python (Django)</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Databases</h3>
-                    <ul>
-                        <li>MySQL</li>
-                        <li>SQLyog</li>
-                        <li>MongoDB</li>
-                        <li>Mongoose</li>
-                        <li>Sqllite3</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Version Control</h3>
-                    <ul>
-                        <li>Git</li>
-                        <li>GitHub</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Deployment</h3>
-                    <ul>
-                        <li>AWS</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Other Skills</h3>
-                    <ul>
-                        <li>Responsive Design</li>
-                        <li>Testing & Debugging</li>
-                    </ul>
+        <section id="home" class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Dev Prakash Singh</h1>
+                    <p class="hero-subtitle">Full Stack Developer | Innovator | Tech Enthusiast</p>
+                    <div class="hero-buttons">
+                        <a href="Resume.pdf" download class="cta-button primary">
+                            <i class="fas fa-download"></i>
+                            Download Resume
+                        </a>
+                        <a href="#contact" class="cta-button secondary">
+                            <i class="fas fa-envelope"></i>
+                            Contact Me
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>Virtual Office Manager</h3>
-                    <p>A comprehensive system for task allocation and tracking within teams.</p>
-                    <p><strong>Technologies used:</strong> HTML5, CSS3, JavaScript, Java (JSP, Servlets), SQLyog (MySQL)</p>
-                    <ul>
-                        <li>Built a virtual office management system for task allocation and tracking within teams.</li>
-                        <li>Created role-based access for admin, managers, and employees, ensuring proper data control.</li>
-                        <li>Implemented task creation, assignment, and progress tracking features.</li>
-                        <li>Managed database queries and employee data with SQLyog (MySQL).</li>
-                    </ul>
-                    <br>
-                    <a href="#" target="_blank" class="website-link">Preview</a>
-                </div>
-                <div class="project-card">
-                    <h3>Skill Matrix</h3>
-                    <p>A platform for users to take exams, view results, and manage quizzes.</p>
-                    <p><strong>Technologies used:</strong> HTML5, CSS3, JavaScript, Java (JSP, Servlets), SQLyog (MySQL)</p>
-                    <ul>
-                        <li>Developed an online exam system allowing users to take exams, view results, and manage quizzes.</li>
-                        <li>Implemented authentication and session management using Java Servlets.</li>
-                        <li>Managed backend data using SQLyog for MySQL, ensuring efficient query management.</li>
-                    </ul>
-                    <br>
-                    <a href="https://devprakash001.github.io/Skill-Matrix-Preview/" target="_blank" class="website-link">Preview</a>
-                </div>
-                <!-- Add more project cards as needed -->
-            </div>
-            <br><br>
-             <div class="project-card">
-                    <h3>Text Utils</h3>
-                    <p>A dynamic text manipulation tool that performs various text transformations and analysis in real-time.</p>
-                    <p><strong>Technologies used:</strong> React.js, HTML5, CSS3, JavaScript, Bootstrap</p>
-                    <ul>
-                        <li>Built a responsive web app using React.js for text transformation features like uppercase, lowercase, capitalization, and text reversal.</li>
-                        <li>Implemented utility features including copy to clipboard, remove extra spaces, clear text, and download text functionality.</li>
-                        <li>Added dynamic word and character count with estimated reading time.</li>
-                        <li>Integrated dark mode toggle for better user experience and accessibility.</li>
-                    </ul>
-                    <br>
-                    <a href="https://inotebook-dev.netlify.app/" target="_blank" class="website-link">Preview</a>
-                </div>
-                <!-- Add more project cards as needed -->
-            </div>
-        </section>
-
-        <section id="websites">
-            <h2>Websites</h2>
-            <div class="websites-grid">
-                <div class="website-card">
-                    <h3>Colorful Tic Tac Toe</h3>
-                    <a href="https://devprakash001.github.io/" target="_blank" class="website-link">Visit Website</a>
-                </div>
-                <div class="website-card">
-                    <h3>Animation Page</h3>
-                    <a href="https://devprakash001.github.io/devsingh98011.github.me/" target="_blank" class="website-link">Visit Website</a>
-                </div>
-                <div class="website-card">
-                    <h3>Calculator</h3>
-                    <a href="https://devprakash001.github.io/Calculator.dev/" target="_blank" class="website-link">Visit Website</a>
-                </div>
-                <div class="website-card">
-                    <h3>Chat Bot AI</h3>
-                    <a href="https://devprakash001.github.io/dev-chatbotai/" target="_blank" class="website-link">Visit Website</a>
-                </div>
-                <div class="website-card">
-                    <h3>2D Solar System</h3>
-                    <a href="https://devprakash001.github.io/2D-solarSystemByDev/" target="_blank" class="website-link">Visit Website</a>
-                </div>
-                <div class="website-card">
-                    <h3>Number Guessing Game</h3>
-                    <a href="https://kktp57egjdngou4j.vercel.app/" target="_blank" class="website-link">Visit Website</a>
-                </div>
-                <div class="website-card">
-                    <h3>Rock Paper Scissors Game</h3>
-                    <a href="https://0xilodcwftivp9io.vercel.app/" target="_blank" class="website-link">Visit Website</a>
-                </div>
-                <div class="website-card">
-                    <h3>Snake Game</h3>
-                    <a href="https://2ddjmjeykpd56ne8.vercel.app/" target="_blank" class="website-link">Visit Website</a>
-                </div>
-                <div class="website-card">
-                    <h3>Memory Game</h3>
-                    <a href="https://5lg6ykvyqhuymivn.vercel.app/" target="_blank" class="website-link">Visit Website</a>
-                </div>
-                <div class="website-card">
-                    <h3>Code Craft</h3>
-                    <a href="https://devprakash001.github.io/CodeCraft/" target="_blank" class="website-link">Visit Website</a>
-                </div>
-                <div class="website-card">
-                    <h3>INotebook</h3>
-                    <a href="https://inotebook-dev.netlify.app/" target="_blank" class="website-link">Visit Website</a>
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="card">
+                    <div class="about-content">
+                        <div class="profile-container">
+                            <img src="images/certificates/IMG_20250114_174347.jpg" alt="Dev Prakash Singh" class="profile-image">
+                        </div>
+                        <div class="about-text">
+                            <p>A highly motivated and enthusiastic fresher with a strong foundation in both front-end and back-end technologies, seeking a position as a Full Stack Developer. Eager to apply my skills in developing scalable web applications while continuously learning and contributing to a dynamic tech environment.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="certificates">
-            <h2>Certifications</h2>
-            <div class="certificate-grid">
-                <div class="certificate-card">
-                    <h3>Full Stack Development</h3>
-                    <p>Certification from Analyze Infotech</p>
-                    <a href="" class="view-certificate" data-certificate="images/certificates/full-stack.jpg">View Certificate</a>
-                </div>
-                <div class="certificate-card">
-                    <h3>Full Stack Development with Python Django</h3>
-                    <p>Certification from Simplilearn|SkillUP</p>
-                    <a href="" class="view-certificate" data-certificate="images/certificates/web-dev.jpg">View Certificate</a>
+        <section id="experience" class="section">
+            <div class="container">
+                <h2 class="section-title">Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>Web Development Intern</h3>
+                            <h4>Analyze Infotech</h4>
+                            <p class="timeline-date">January 2025 – April 2025</p>
+                            <p>I gained hands-on industry experience during my Web Development Internship at Analyze Infotech. I worked on full-stack web development projects, primarily using React.js, Node.js, and MongoDB. I contributed to building responsive and scalable web applications, collaborated closely with senior developers, and enhanced real-world solutions by integrating clean UI components and backend functionality.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3>Java Full Stack Intern</h3>
+                            <h4>Analyze InfoTech, Lucknow</h4>
+                            <p class="timeline-date">November 11, 2024 – May 10, 2025</p>
+                            <p><strong>Successfully Completed My Java Full Stack Internship!</strong><br>
+                            This internship gave me hands-on experience in full stack development and real-world software development practices. From backend logic to frontend integration, the journey was both challenging and rewarding!<br>
+                            A heartfelt thanks to Mr. Pankaj Mishra (HR Manager) and the amazing team at Analyze InfoTech for their constant support and guidance.<br>
+                            Looking forward to applying these skills in future opportunities and continuing to grow in the field of tech!</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact">
-    <h2>Contact Me</h2>
-    <div class="contact-container">
-        <div class="contact-info">
-            <div class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <p>Email: <a href="mailto:devsingh98011@gmail.com">devsingh98011@gmail.com</a></p>
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <div class="skill-header">
+                            <i class="fas fa-code"></i>
+                            <h3>Front-end</h3>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React JS</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-header">
+                            <i class="fas fa-server"></i>
+                            <h3>Back-end</h3>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Java (JSP, Servlet)</span>
+                            <span class="skill-tag">Node JS</span>
+                            <span class="skill-tag">Spring Boot</span>
+                            <span class="skill-tag">Python (Django)</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-header">
+                            <i class="fas fa-database"></i>
+                            <h3>Databases</h3>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">SQLyog</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">Mongoose</span>
+                            <span class="skill-tag">SQLite3</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-header">
+                            <i class="fab fa-git-alt"></i>
+                            <h3>Version Control</h3>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-header">
+                            <i class="fas fa-cloud"></i>
+                            <h3>Deployment</h3>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">AWS</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="skill-header">
+                            <i class="fas fa-tools"></i>
+                            <h3>Other Skills</h3>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag">Responsive Design</span>
+                            <span class="skill-tag">Testing & Debugging</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="contact-item">
-                <i class="fas fa-phone"></i>
-                <p>Phone: <a href="tel:+919838011971">+91 98380 11971</a></p>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Virtual Office Manager</h3>
+                            <div class="project-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                        </div>
+                        <p class="project-description">A comprehensive system for task allocation and tracking within teams.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                        <ul class="project-features">
+                            <li>Built a virtual office management system for task allocation and tracking within teams.</li>
+                            <li>Created role-based access for admin, managers, and employees, ensuring proper data control.</li>
+                            <li>Implemented task creation, assignment, and progress tracking features.</li>
+                            <li>Managed database queries and employee data with SQLyog (MySQL).</li>
+                        </ul>
+                        <div class="project-actions">
+                            <a href="#" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Preview
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Skill Matrix</h3>
+                            <div class="project-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                        </div>
+                        <p class="project-description">A platform for users to take exams, view results, and manage quizzes.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                        <ul class="project-features">
+                            <li>Developed an online exam system allowing users to take exams, view results, and manage quizzes.</li>
+                            <li>Implemented authentication and session management using Java Servlets.</li>
+                            <li>Managed backend data using SQLyog for MySQL, ensuring efficient query management.</li>
+                        </ul>
+                        <div class="project-actions">
+                            <a href="https://devprakash001.github.io/Skill-Matrix-Preview/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Preview
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Text Utils</h3>
+                            <div class="project-icon">
+                                <i class="fas fa-text-width"></i>
+                            </div>
+                        </div>
+                        <p class="project-description">A dynamic text manipulation tool that performs various text transformations and analysis in real-time.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">Bootstrap</span>
+                        </div>
+                        <ul class="project-features">
+                            <li>Built a responsive web app using React.js for text transformation features like uppercase, lowercase, capitalization, and text reversal.</li>
+                            <li>Implemented utility features including copy to clipboard, remove extra spaces, clear text, and download text functionality.</li>
+                            <li>Added dynamic word and character count with estimated reading time.</li>
+                            <li>Integrated dark mode toggle for better user experience and accessibility.</li>
+                        </ul>
+                        <div class="project-actions">
+                            <a href="https://inotebook-dev.netlify.app/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                                Preview
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="social-links">
-            <a href="https://github.com/devprakash001" target="_blank" class="social-icon">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/devprakashsingh001" target="_blank" class="social-icon">
-                <i class="fab fa-linkedin"></i>
-            </a>
-        </div>
-    </div>
-</section>
+        </section>
+
+        <section id="websites" class="section">
+            <div class="container">
+                <h2 class="section-title">Websites</h2>
+                <div class="websites-grid">
+                    <div class="website-card">
+                        <div class="website-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <h3>Colorful Tic Tac Toe</h3>
+                        <a href="https://devprakash001.github.io/" target="_blank" class="website-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            Visit Website
+                        </a>
+                    </div>
+                    <div class="website-card">
+                        <div class="website-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <h3>Animation Page</h3>
+                        <a href="https://devprakash001.github.io/devsingh98011.github.me/" target="_blank" class="website-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            Visit Website
+                        </a>
+                    </div>
+                    <div class="website-card">
+                        <div class="website-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h3>Calculator</h3>
+                        <a href="https://devprakash001.github.io/Calculator.dev/" target="_blank" class="website-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            Visit Website
+                        </a>
+                    </div>
+                    <div class="website-card">
+                        <div class="website-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>Chat Bot AI</h3>
+                        <a href="https://devprakash001.github.io/dev-chatbotai/" target="_blank" class="website-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            Visit Website
+                        </a>
+                    </div>
+                    <div class="website-card">
+                        <div class="website-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>2D Solar System</h3>
+                        <a href="https://devprakash001.github.io/2D-solarSystemByDev/" target="_blank" class="website-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            Visit Website
+                        </a>
+                    </div>
+                    <div class="website-card">
+                        <div class="website-icon">
+                            <i class="fas fa-dice"></i>
+                        </div>
+                        <h3>Number Guessing Game</h3>
+                        <a href="https://kktp57egjdngou4j.vercel.app/" target="_blank" class="website-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            Visit Website
+                        </a>
+                    </div>
+                    <div class="website-card">
+                        <div class="website-icon">
+                            <i class="fas fa-hand-rock"></i>
+                        </div>
+                        <h3>Rock Paper Scissors</h3>
+                        <a href="https://0xilodcwftivp9io.vercel.app/" target="_blank" class="website-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            Visit Website
+                        </a>
+                    </div>
+                    <div class="website-card">
+                        <div class="website-icon">
+                            <i class="fas fa-snake"></i>
+                        </div>
+                        <h3>Snake Game</h3>
+                        <a href="https://2ddjmjeykpd56ne8.vercel.app/" target="_blank" class="website-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            Visit Website
+                        </a>
+                    </div>
+                    <div class="website-card">
+                        <div class="website-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Memory Game</h3>
+                        <a href="https://5lg6ykvyqhuymivn.vercel.app/" target="_blank" class="website-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            Visit Website
+                        </a>
+                    </div>
+                    <div class="website-card">
+                        <div class="website-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>Code Craft</h3>
+                        <a href="https://devprakash001.github.io/CodeCraft/" target="_blank" class="website-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            Visit Website
+                        </a>
+                    </div>
+                    <div class="website-card">
+                        <div class="website-icon">
+                            <i class="fas fa-sticky-note"></i>
+                        </div>
+                        <h3>INotebook</h3>
+                        <a href="https://inotebook-dev.netlify.app/" target="_blank" class="website-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            Visit Website
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certificates" class="section">
+            <div class="container">
+                <h2 class="section-title">Certifications</h2>
+                <div class="certificates-grid">
+                    <div class="certificate-card">
+                        <div class="certificate-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3>JAVA Full Stack Internship</h3>
+                        <p class="certificate-issuer">Analyze Infotech</p>
+                        <button class="view-certificate" data-certificate="/placeholder.svg?height=600&width=800">
+                            <i class="fas fa-eye"></i>
+                            View Certificate
+                        </button>
+                    </div>
+                    <div class="certificate-card">
+                        <div class="certificate-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3>Full Stack Development</h3>
+                        <p class="certificate-issuer">Analyze Infotech</p>
+                        <button class="view-certificate" data-certificate="/placeholder.svg?height=600&width=800">
+                            <i class="fas fa-eye"></i>
+                            View Certificate
+                        </button>
+                    </div>
+                    <div class="certificate-card">
+                        <div class="certificate-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3>Full Stack Development with Python Django</h3>
+                        <p class="certificate-issuer">Simplilearn | SkillUP</p>
+                        <button class="view-certificate" data-certificate="/placeholder.svg?height=600&width=800">
+                            <i class="fas fa-eye"></i>
+                            View Certificate
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Contact Me</h2>
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <a href="mailto:devsingh98011@gmail.com">devsingh98011@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Phone</h4>
+                                <a href="tel:+919838011971">+91 98380 11971</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-section">
+                        <h3>Follow Me</h3>
+                        <div class="social-links">
+                            <a href="https://github.com/devprakash001" target="_blank" class="social-icon" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/devprakashsingh001" target="_blank" class="social-icon" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; Dev Prakash Singh. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2025 Dev Prakash Singh. All rights reserved.</p>
+        </div>
     </footer>
 
+    <!-- Certificate Modal -->
     <div id="certificate-modal" class="modal">
+        <div class="modal-overlay"></div>
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <img id="certificate-image" src="/placeholder.svg" alt="Certificate">
+            <button class="close-modal" aria-label="Close modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-image-container">
+                <img id="certificate-image" src="/placeholder.svg" alt="Certificate">
+            </div>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-
