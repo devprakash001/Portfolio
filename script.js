@@ -418,3 +418,22 @@ function enhanceAccessibility() {
 enhanceAccessibility()
 
 console.log("🚀 Portfolio loaded successfully!")
+
+// Animate cards one by one on scroll
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".card-animate");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationDelay = `${index * 0.2}s`;
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+  });
+
+  cards.forEach((card) => observer.observe(card));
+});
