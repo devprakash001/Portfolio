@@ -306,7 +306,7 @@
   
   /* Cards */
   .card {
-    background: var(--card-bg);
+    background: transparent;
     backdrop-filter: blur(20px);
     border-radius: 20px;
     padding: var(--spacing-xl);
@@ -315,6 +315,7 @@
   }
   
   .card:hover {
+    border-color: var(--primary-color);
     transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(0, 255, 255, 0.1);
   }
@@ -388,7 +389,7 @@
   }
   
   .timeline-content {
-    background: var(--card-bg);
+    background: transparent;
     padding: var(--spacing-lg);
     border-radius: 15px;
     border: 1px solid var(--border-color);
@@ -422,7 +423,7 @@
   }
   
   .skill-category {
-    background: var(--card-bg);
+    background: transparent;
     padding: var(--spacing-lg);
     border-radius: 15px;
     border: 1px solid var(--border-color);
@@ -481,7 +482,7 @@
   }
   
   .project-card {
-    background: var(--card-bg);
+    background: transparent;
     border-radius: 20px;
     padding: var(--spacing-lg);
     border: 1px solid var(--border-color);
@@ -589,7 +590,7 @@
   }
   
   .website-card {
-    background: var(--card-bg);
+    background: transparent;
     padding: var(--spacing-lg);
     border-radius: 15px;
     text-align: center;
@@ -643,7 +644,7 @@
   }
   
   .certificate-card {
-    background: var(--card-bg);
+    background: transparent;
     padding: var(--spacing-xl);
     border-radius: 20px;
     text-align: center;
@@ -714,7 +715,7 @@
     align-items: center;
     gap: var(--spacing-md);
     padding: var(--spacing-lg);
-    background: var(--card-bg);
+    background: transparent;
     border-radius: 15px;
     border: 1px solid var(--border-color);
     backdrop-filter: blur(10px);
@@ -762,10 +763,15 @@
   .social-section {
     text-align: center;
     padding: var(--spacing-lg);
-    background: var(--card-bg);
+    background: transparent;
     border-radius: 15px;
     border: 1px solid var(--border-color);
     backdrop-filter: blur(10px);
+  }
+
+  .social-section:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
   }
   
   .social-section h3 {
