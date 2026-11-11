@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Dev Prakash Singh DP Logo">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071324" />
+      <stop offset="55%" stop-color="#04070f" />
+      <stop offset="100%" stop-color="#14071f" />
+    </linearGradient>
+    <linearGradient id="neonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00ffff" />
+      <stop offset="50%" stop-color="#00d4ff" />
+      <stop offset="100%" stop-color="#ff00ff" />
+    </linearGradient>
+    <linearGradient id="barGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00ffff" />
+      <stop offset="100%" stop-color="#ff00ff" />
+    </linearGradient>
+    <linearGradient id="letterD" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#b8f8ff" />
+    </linearGradient>
+    <linearGradient id="letterP" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00ffff" />
+      <stop offset="100%" stop-color="#ff00ff" />
+    </linearGradient>
+    <radialGradient id="ambientGlow" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#00ffff" stop-opacity="0.18" />
+      <stop offset="65%" stop-color="#ff00ff" stop-opacity="0.06" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Rounded cyber badge -->
+  <rect x="24" y="24" width="464" height="464" rx="112" fill="url(#bgGrad)" stroke="url(#neonGrad)" stroke-width="14" />
+  <rect x="38" y="38" width="436" height="436" rx="98" fill="url(#ambientGlow)" stroke="#ffffff" stroke-opacity="0.08" stroke-width="2" />
+
+  <!-- Balanced developer code brackets -->
+  <path d="M 110 212 L 74 256 L 110 300" fill="none" stroke="#00ffff" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" opacity="0.92" />
+  <path d="M 402 212 L 438 256 L 402 300" fill="none" stroke="#ff00ff" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" opacity="0.92" />
+
+  <!-- Centered geometric 'D' (140..252) -->
+  <path d="M 140 162 H 192 C 232 162 252 194 252 256 C 252 318 232 350 192 350 H 140 Z M 174 195 V 317 H 190 C 210 317 218 297 218 256 C 218 215 210 195 190 195 Z"
+        fill="url(#letterD)" />
+
+  <!-- Centered geometric 'P' (270..372) -->
+  <path d="M 270 162 H 328 C 356 162 372 184 372 218 C 372 252 356 274 328 274 H 304 V 350 H 270 Z M 304 194 V 242 H 324 C 335 242 340 233 340 218 C 340 203 335 194 324 194 Z"
+        fill="url(#letterP)" />
+
+  <!-- Centered neon accent bar -->
+  <rect x="176" y="378" width="160" height="8" rx="4" fill="url(#barGrad)" opacity="0.9" />
+</svg>
