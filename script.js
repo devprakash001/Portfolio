@@ -119,13 +119,21 @@ function initThreeJS() {
   }
 }
 
-function animate() {
+let lastRenderTime = 0
+
+function animate(timestamp = 0) {
   if (document.hidden) {
     animationFrameId = null
     return
   }
 
   animationFrameId = requestAnimationFrame(animate)
+
+  // Throttle mobile WebGL frame rate to ~30fps to reduce CPU/GPU contention
+  if (window.innerWidth <= 768 && timestamp - lastRenderTime < 33) {
+    return
+  }
+  lastRenderTime = timestamp
 
   if (particles) {
     particles.rotation.x += 0.0003
@@ -265,20 +273,13 @@ function isMobileDevice() {
 }
 
 function isLowEndDevice() {
-  return navigator.hardwareConcurrency <= 2 || navigator.deviceMemory <= 2 || window.innerWidth <= 480
+  return navigator.hardwareConcurrency <= 2 || navigator.deviceMemory <= 2
 }
 
 // Performance optimizations based on device capabilities
 function optimizeForDevice() {
   if (isLowEndDevice()) {
-    // Reduce animation complexity for low-end devices
-    document.documentElement.style.setProperty("--animation-duration", "0.2s")
-
-    // Disable some visual effects
-    const cards = document.querySelectorAll(".card")
-    cards.forEach((card) => {
-      card.style.backdropFilter = "none"
-    })
+    document.body.classList.add("low-end-device")
   }
 }
 
@@ -346,13 +347,8 @@ if (isMobileDevice()) {
 window.addEventListener("orientationchange", () => {
   setTimeout(() => {
     handleResize()
-    // Recalculate viewport height for mobile browsers
-    document.documentElement.style.setProperty("--vh", `${window.innerHeight * 0.01}px`)
   }, 100)
 })
-
-// Set initial viewport height
-document.documentElement.style.setProperty("--vh", `${window.innerHeight * 0.01}px`)
 
 // Error handling for Three.js
 window.addEventListener("error", (e) => {

@@ -198,7 +198,7 @@
     padding: var(--spacing-2xl) 0;
     opacity: 0;
     transform: translateY(50px);
-    transition: all 0.8s ease;
+    transition: opacity 0.8s ease, transform 0.8s ease;
   }
   
   .section.visible {
@@ -1019,6 +1019,30 @@
       max-width: calc(100vw - 2rem);
     }
   }
+
+  @media (max-width: 480px) {
+    .card,
+    .timeline-content,
+    .skill-category,
+    .project-card,
+    .website-card,
+    .certificate-card,
+    .contact-item,
+    .social-section {
+      backdrop-filter: none;
+    }
+  }
+
+  body.low-end-device .card,
+  body.low-end-device .timeline-content,
+  body.low-end-device .skill-category,
+  body.low-end-device .project-card,
+  body.low-end-device .website-card,
+  body.low-end-device .certificate-card,
+  body.low-end-device .contact-item,
+  body.low-end-device .social-section {
+    backdrop-filter: none;
+  }
   
   /* Small Devices (landscape phones, 576px and up) */
   @media (min-width: 576px) and (max-width: 767.98px) {
@@ -1221,3 +1245,66 @@
         transform: translateY(0);
     }
 }
+
+/* Font Awesome 6 Subset (used icons only, font-display: swap) */
+@font-face {
+    font-family: "Font Awesome 6 Brands";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/webfonts/fa-brands-400.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Font Awesome 6 Free";
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/webfonts/fa-solid-900.woff2") format("woff2");
+}
+
+.fas,
+.fab {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto;
+}
+
+.fas { font-family: "Font Awesome 6 Free"; font-weight: 900; }
+.fab { font-family: "Font Awesome 6 Brands"; font-weight: 400; }
+
+.fa-git-alt:before { content: "\f841"; }
+.fa-github:before { content: "\f09b"; }
+.fa-instagram:before { content: "\f16d"; }
+.fa-linkedin:before { content: "\f08c"; }
+.fa-bookmark:before { content: "\f02e"; }
+.fa-brain:before { content: "\f5dc"; }
+.fa-building:before { content: "\f1ad"; }
+.fa-calculator:before { content: "\f1ec"; }
+.fa-certificate:before { content: "\f0a3"; }
+.fa-cloud:before { content: "\f0c2"; }
+.fa-code:before { content: "\f121"; }
+.fa-coins:before { content: "\f51e"; }
+.fa-database:before { content: "\f1c0"; }
+.fa-dice:before { content: "\f522"; }
+.fa-download:before { content: "\f019"; }
+.fa-envelope:before { content: "\f0e0"; }
+.fa-external-link-alt:before { content: "\f35d"; }
+.fa-eye:before { content: "\f06e"; }
+.fa-file-upload:before { content: "\f574"; }
+.fa-gamepad:before { content: "\f11b"; }
+.fa-globe:before { content: "\f0ac"; }
+.fa-graduation-cap:before { content: "\f19d"; }
+.fa-magic:before { content: "\f0d0"; }
+.fa-phone:before { content: "\f095"; }
+.fa-phone-alt:before { content: "\f879"; }
+.fa-robot:before { content: "\f544"; }
+.fa-server:before { content: "\f233"; }
+.fa-sticky-note:before { content: "\f249"; }
+.fa-text-width:before { content: "\f035"; }
+.fa-times:before { content: "\f00d"; }
+.fa-tools:before { content: "\f7d9"; }
