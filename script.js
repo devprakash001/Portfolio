@@ -155,7 +155,7 @@ document.addEventListener("visibilitychange", () => {
 function smoothScrollTo(target) {
   const element = document.querySelector(target)
   if (element) {
-    const headerOffset = 80
+    const headerOffset = 68
     const elementPosition = element.getBoundingClientRect().top
     const offsetPosition = elementPosition + window.pageYOffset - headerOffset
 

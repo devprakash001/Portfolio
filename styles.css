@@ -136,7 +136,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--spacing-md) var(--spacing-md);
+    padding: 0.6rem var(--spacing-md);
     max-width: var(--container-xl);
     margin: 0 auto;
   }
@@ -191,7 +191,7 @@
   
   /* Main Content */
   main {
-    padding-top: 80px;
+    padding-top: 66px;
   }
   
   .section {
@@ -918,13 +918,13 @@
     }
   
     .nav-container {
-      padding: var(--spacing-sm);
+      padding: 0.55rem var(--spacing-sm);
     }
   
     .nav-menu {
       position: fixed;
       left: -100%;
-      top: 70px;
+      top: 64px;
       flex-direction: column;
       background: rgba(0, 0, 0, 0.98);
       width: 100%;
