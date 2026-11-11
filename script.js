@@ -7,11 +7,12 @@ const body = document.body
 // Toggle mobile menu
 navToggle.addEventListener("click", (e) => {
   e.stopPropagation()
-  navMenu.classList.toggle("active")
+  const isOpen = navMenu.classList.toggle("active")
   navToggle.classList.toggle("active")
+  navToggle.setAttribute("aria-expanded", String(isOpen))
 
   // Prevent body scroll when menu is open
-  if (navMenu.classList.contains("active")) {
+  if (isOpen) {
     body.style.overflow = "hidden"
   } else {
     body.style.overflow = "auto"
@@ -23,6 +24,7 @@ navLinks.forEach((link) => {
   link.addEventListener("click", () => {
     navMenu.classList.remove("active")
     navToggle.classList.remove("active")
+    navToggle.setAttribute("aria-expanded", "false")
     body.style.overflow = "auto"
   })
 })
@@ -32,6 +34,7 @@ document.addEventListener("click", (e) => {
   if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
     navMenu.classList.remove("active")
     navToggle.classList.remove("active")
+    navToggle.setAttribute("aria-expanded", "false")
     body.style.overflow = "auto"
   }
 })
@@ -280,8 +283,8 @@ window.addEventListener("load", () => {
   // Apply device optimizations
   optimizeForDevice()
 
-  // Hide loading screen
-  setTimeout(hideLoadingScreen, 1000)
+  // Hide loading screen without artificial blocking delay
+  hideLoadingScreen()
 
   // Add loaded class to body
   body.classList.add("loaded")
@@ -311,15 +314,6 @@ lazyLoadImages()
 if (isMobileDevice()) {
   // Add touch-friendly classes
   document.body.classList.add("touch-device")
-
-  // Prevent zoom on double tap for buttons
-  const buttons = document.querySelectorAll("button, .cta-button, .nav-link")
-  buttons.forEach((button) => {
-    button.addEventListener("touchend", (e) => {
-      e.preventDefault()
-      button.click()
-    })
-  })
 }
 
 // Orientation change handler
@@ -341,18 +335,6 @@ window.addEventListener("error", (e) => {
     document.body.classList.add("no-webgl")
   }
 })
-
-// Preload critical resources
-function preloadResources() {
-  const criticalImages = ["/placeholder.svg?height=300&width=300"]
-
-  criticalImages.forEach((src) => {
-    const img = new Image()
-    img.src = src
-  })
-}
-
-preloadResources()
 
 // Analytics and performance monitoring (placeholder)
 function trackPerformance() {

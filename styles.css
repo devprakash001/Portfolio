@@ -177,6 +177,8 @@
     cursor: pointer;
     gap: 4px;
     padding: var(--spacing-xs);
+    background: transparent;
+    border: none;
   }
   
   .nav-toggle span {
@@ -345,6 +347,11 @@
   .about-text {
     flex: 1;
     min-width: 300px;
+  }
+
+  .about-text .about-greeting {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-sm);
   }
   
   .about-text p {
@@ -743,6 +750,7 @@
     color: var(--primary-color);
   }
   
+  .contact-details h3,
   .contact-details h4 {
     color: var(--text-color);
     font-size: var(--font-size-base);
@@ -1162,6 +1170,12 @@
     outline-offset: 2px;
   }
   
+  button,
+  .cta-button,
+  .nav-link {
+    touch-action: manipulation;
+  }
+
   button:focus,
   a:focus {
     outline: 2px solid var(--primary-color);

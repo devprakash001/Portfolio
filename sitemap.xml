@@ -4,27 +4,12 @@
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
 <url>
   <loc>https://devprakash001.github.io/Portfolio/</loc>
-  <lastmod>2025-11-19T15:14:32+00:00</lastmod>
-  <priority>1.00</priority>
+  <lastmod>2026-11-11T00:00:00+00:00</lastmod>
 </url>
 <url>
   <loc>https://devprakash001.github.io/Portfolio/Resume.pdf</loc>
-  <lastmod>2025-11-19T15:14:32+00:00</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2025-07-26T00:00:00+00:00</lastmod>
 </url>
-<url>
-  <loc>https://devprakash001.github.io/Portfolio/#about</loc>
-</url>
-<url>
-  <loc>https://devprakash001.github.io/Portfolio/#projects</loc>
-</url>
-<url>
-  <loc>https://devprakash001.github.io/Portfolio/#contact</loc>
-</url>
-
 </urlset>
