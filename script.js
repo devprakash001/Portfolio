@@ -41,14 +41,16 @@ document.addEventListener("click", (e) => {
 
 // Background animation
 let scene, camera, renderer, particles
+let animationFrameId = null
 const THREE = window.THREE // Declare the THREE variable
+const prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches
 
 function getParticleCount() {
   const width = window.innerWidth
-  if (width < 480) return 2000 // Very small screens
-  if (width < 768) return 3000 // Mobile
-  if (width < 1024) return 5000 // Tablet
-  return 8000 // Desktop
+  if (width < 480) return 800 // Very small screens
+  if (width < 768) return 1400 // Mobile
+  if (width < 1024) return 3500 // Tablet
+  return 6000 // Desktop
 }
 
 function getParticleSize() {
@@ -56,6 +58,10 @@ function getParticleSize() {
   if (width < 480) return 0.8
   if (width < 768) return 1
   return 1.5
+}
+
+function getPixelRatio() {
+  return window.innerWidth <= 768 ? 1 : Math.min(window.devicePixelRatio, 2)
 }
 
 function initThreeJS() {
@@ -70,7 +76,7 @@ function initThreeJS() {
     })
 
     renderer.setSize(window.innerWidth, window.innerHeight)
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+    renderer.setPixelRatio(getPixelRatio())
 
     const backgroundElement = document.getElementById("background")
     if (backgroundElement) {
@@ -103,14 +109,23 @@ function initThreeJS() {
     scene.add(particles)
     camera.position.z = 1000
 
-    animate()
+    if (prefersReducedMotion) {
+      renderer.render(scene, camera)
+    } else {
+      animate()
+    }
   } catch (error) {
     console.warn("Three.js initialization failed:", error)
   }
 }
 
 function animate() {
-  requestAnimationFrame(animate)
+  if (document.hidden) {
+    animationFrameId = null
+    return
+  }
+
+  animationFrameId = requestAnimationFrame(animate)
 
   if (particles) {
     particles.rotation.x += 0.0003
@@ -121,6 +136,12 @@ function animate() {
     renderer.render(scene, camera)
   }
 }
+
+document.addEventListener("visibilitychange", () => {
+  if (!document.hidden && !prefersReducedMotion && renderer && scene && camera && animationFrameId === null) {
+    animate()
+  }
+})
 
 // Smooth scrolling
 function smoothScrollTo(target) {
@@ -215,7 +236,7 @@ function handleResize() {
     camera.aspect = window.innerWidth / window.innerHeight
     camera.updateProjectionMatrix()
     renderer.setSize(window.innerWidth, window.innerHeight)
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+    renderer.setPixelRatio(getPixelRatio())
   }
 }
 
@@ -275,11 +296,6 @@ function hideLoadingScreen() {
 
 // Initialize everything when page loads
 window.addEventListener("load", () => {
-  // Initialize Three.js if available
-  if (typeof THREE !== "undefined") {
-    initThreeJS()
-  }
-
   // Apply device optimizations
   optimizeForDevice()
 
@@ -288,6 +304,16 @@ window.addEventListener("load", () => {
 
   // Add loaded class to body
   body.classList.add("loaded")
+
+  // Initialize Three.js background after initial paint/idle when available
+  if (typeof THREE !== "undefined") {
+    const startBg = () => initThreeJS()
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(startBg, { timeout: 1000 })
+    } else {
+      setTimeout(startBg, 100)
+    }
+  }
 })
 
 // Lazy loading for images
